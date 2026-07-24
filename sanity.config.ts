@@ -12,7 +12,7 @@ export default defineConfig({
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   plugins: [
     structureTool({
-      structure: (structure) => structure.list().title("内容管理").items([
+      structure: (structure) => structure.list().id("content").title("内容管理").items([
         structure.listItem().title("网站设置").child(structure.document().schemaType("siteSettings").documentId("siteSettings")),
         structure.divider(),
         ...structure.documentTypeListItems().filter((item) => item.getId() !== "siteSettings"),
