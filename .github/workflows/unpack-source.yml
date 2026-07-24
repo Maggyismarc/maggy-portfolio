@@ -16,6 +16,31 @@ jobs:
       - name: Unpack source
         if: ${{ hashFiles('maggy-site-source.zip') != '' }}
         run: |
+          unzip -o maggy-site-source.zip || test $? -eq 1
+          rm maggy-site-source.zip
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Unpack portfolio source"
+          git push
+name: Unpack portfolio source
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unpack source
+        if: ${{ hashFiles('maggy-site-source.zip') != '' }}
+        run: |
           unzip -o maggy-site-source.zip
           rm maggy-site-source.zip
           git config user.name "github-actions[bot]"
