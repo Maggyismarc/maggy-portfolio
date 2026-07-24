@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://maggy-portfolio.vercel.app"),
+  metadataBase: new URL("https://maggy-portfolio-bay.vercel.app"),
   title: {
     default: "Maggy / 肖尧｜翻译、跨文化沟通与生活记录",
     template: "%s｜Maggy / 肖尧",
