@@ -339,5 +339,14 @@ body,.hero,.about-section,.experience-section,.content-section,.travel-section,.
 
 .editorial-card.ratio-portrait .editorial-art{aspect-ratio:4/5!important}.editorial-card.ratio-square .editorial-art{aspect-ratio:1!important}.editorial-card.ratio-landscape .editorial-art,.editorial-card.ratio-auto .editorial-art{aspect-ratio:16/10!important}
 .fan-card.ratio-portrait .fan-photo{height:300px}.fan-card.ratio-square .fan-photo{height:285px}.fan-card.ratio-landscape .fan-photo{height:245px}.fan-card.ratio-auto .fan-photo{height:300px}
+.detail-cover{position:absolute;right:5vw;bottom:5vw;width:min(40vw,520px);aspect-ratio:4/3;border-radius:22px;overflow:hidden;box-shadow:0 28px 65px rgba(65,58,36,.22);transform:rotate(1.5deg)}
+.detail-cover img,.rich-image img,.detail-gallery img{object-fit:cover}
+.rich-image{position:relative;margin:55px 0;aspect-ratio:16/10;border-radius:20px;overflow:hidden;box-shadow:0 22px 55px rgba(52,50,42,.16)}
+.rich-image figcaption,.detail-gallery figcaption{font-family:var(--sans);font-size:11px;color:var(--muted);margin-top:10px}
+.detail-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:70px}
+.detail-gallery figure{margin:0}.detail-gallery figure>div{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;box-shadow:0 18px 45px rgba(52,50,42,.14)}
+.detail-gallery figure:nth-child(3n+2)>div{aspect-ratio:4/5}
 @media(max-width:1050px){.fan-card.ratio-portrait .fan-photo{height:285px}.fan-card.ratio-square .fan-photo{height:270px}.fan-card.ratio-landscape .fan-photo{height:230px}.fan-card.ratio-auto .fan-photo{height:285px}}
 @media(max-width:620px){.fan-card.ratio-portrait .fan-photo{height:235px}.fan-card.ratio-square .fan-photo{height:220px}.fan-card.ratio-landscape .fan-photo{height:185px}.fan-card.ratio-auto .fan-photo{height:235px}}
+@media(max-width:900px){.detail-cover{right:5vw;bottom:4vw;width:44vw}.detail-hero h1{max-width:82%}}
+@media(max-width:620px){.detail-cover{position:relative;right:auto;bottom:auto;width:100%;margin-top:38px;transform:none}.detail-hero{padding-bottom:6vw}.detail-hero h1{max-width:none}.detail-gallery{grid-template-columns:1fr;gap:24px}.detail-gallery figure:nth-child(n)>div{aspect-ratio:4/3}}

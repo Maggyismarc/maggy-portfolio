@@ -11,6 +11,8 @@ type Entry = {
   location?: string;
   place?: string;
   imageRatio?: "auto" | "portrait" | "landscape" | "square";
+  coverUrl?: string;
+  coverAlt?: string;
 };
 
 export function EditorialGrid({ entries, type }: { entries: Entry[]; type: "journal" | "travel" }) {
@@ -20,14 +22,15 @@ export function EditorialGrid({ entries, type }: { entries: Entry[]; type: "jour
         <Link className={`editorial-card color-${entry.color} ratio-${entry.imageRatio ?? "landscape"}`} href={`/${type}/${entry.slug}`} key={entry.slug}>
           <div className={`editorial-art crop-${(index % 5) + 1}`} aria-label="待替换的图片占位区域">
             <Image
-              src="/images/maggy-portrait.jpg"
-              alt="临时展示图片，后续可自由替换"
+              src={entry.coverUrl || "/images/maggy-portrait.jpg"}
+              alt={entry.coverAlt || `${entry.title}封面图片`}
               fill
               sizes="(max-width: 900px) 88vw, 32vw"
+              unoptimized={Boolean(entry.coverUrl)}
             />
             <span>{entry.index}</span>
             <b>{type === "journal" ? "DAILY NOTE" : "TRAVEL STORY"}</b>
-            <small>临时图片 · 待替换</small>
+            {!entry.coverUrl && <small>临时图片 · 待替换</small>}
           </div>
           <div className="editorial-copy">
             <div>

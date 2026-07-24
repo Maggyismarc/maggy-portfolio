@@ -18,8 +18,8 @@ export default async function Home() {
       <section className="about-section" id="about">
         <Reveal className="section-heading"><p>02 — ABOUT</p><h2>我喜欢问“为什么”，<br />也相信一句话可以<br /><i>抵达另一个人。</i></h2></Reveal>
         <Reveal className="about-copy" delay={.12}>
-          <p className="lead">我是一名关注语言、翻译、跨文化沟通与国际交流的翻译专业研究生。</p>
-          <p>从课堂教学到国际赛事接待，从英文主持到商务沟通，我持续练习的不只是准确表达，更是理解不同语境中的人。</p>
+          <p className="lead">{profile.aboutLead || "我是一名关注语言、翻译、跨文化沟通与国际交流的翻译专业研究生。"}</p>
+          <p>{profile.aboutBody || "从课堂教学到国际赛事接待，从英文主持到商务沟通，我持续练习的不只是准确表达，更是理解不同语境中的人。"}</p>
           <div className="about-labels"><span>TRANSLATION</span><span>CROSS-CULTURE</span><span>STORYTELLING</span></div>
         </Reveal>
         <div className="about-photo-fragment" aria-hidden="true" />

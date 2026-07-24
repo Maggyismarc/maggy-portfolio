@@ -9,4 +9,4 @@ export const skillType = defineType({ name: "skill", title: "技能与资质", t
   defineField({ name: "accent", title: "卡片撞色", type: "string" }),
   defineField({ name: "order", title: "展示顺序", type: "number" }),
   defineField({ name: "published", title: "公开展示", type: "boolean", initialValue: true }),
-] });
+] , preview: { select: { title: "title", subtitle: "category" } } });

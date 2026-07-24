@@ -8,11 +8,14 @@ export type Experience = {
   tags: string[];
   accent: string;
   imageRatio?: "auto" | "portrait" | "landscape" | "square";
+  coverUrl?: string;
+  coverAlt?: string;
 };
 
 export type SiteProfile = {
   displayName: string; chineseName: string; email: string; phone: string; formattedPhone: string;
   showPhone: boolean; showWechat: boolean; intro?: string; portraitUrl?: string;
+  headline?: string; aboutLead?: string; aboutBody?: string;
 };
 
 export const siteProfile: SiteProfile = {
@@ -88,7 +91,19 @@ export const experiences: Experience[] = [
   },
 ];
 
-export type JournalEntry = { slug: string; index: string; title: string; date: string; location: string; excerpt: string; color: string; imageRatio?: "auto" | "portrait" | "landscape" | "square" };
+export type PortableContent = Array<{
+  _key?: string;
+  _type: "block" | "image";
+  style?: string;
+  children?: Array<{ _key?: string; text?: string; marks?: string[] }>;
+  assetUrl?: string;
+  alt?: string;
+  caption?: string;
+}>;
+
+export type GalleryImage = { url: string; alt?: string; caption?: string };
+
+export type JournalEntry = { slug: string; index: string; title: string; date: string; location: string; excerpt: string; color: string; imageRatio?: "auto" | "portrait" | "landscape" | "square"; coverUrl?: string; coverAlt?: string; body?: PortableContent; gallery?: GalleryImage[] };
 export const journalEntries: JournalEntry[] = [
   {
     slug: "slow-afternoon",
@@ -137,7 +152,7 @@ export const journalEntries: JournalEntry[] = [
   },
 ];
 
-export type TravelEntry = { slug: string; index: string; title: string; place: string; date: string; excerpt: string; color: string; imageRatio?: "auto" | "portrait" | "landscape" | "square" };
+export type TravelEntry = { slug: string; index: string; title: string; place: string; date: string; excerpt: string; color: string; imageRatio?: "auto" | "portrait" | "landscape" | "square"; coverUrl?: string; coverAlt?: string; body?: PortableContent; gallery?: GalleryImage[] };
 export const travelEntries: TravelEntry[] = [
   {
     slug: "first-destination",

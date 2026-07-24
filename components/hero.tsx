@@ -17,8 +17,8 @@ export function Hero({ profile = fallbackProfile }: { profile?: SiteProfile }) {
         <p className="hero-kicker">HELLO, NICE TO MEET YOU.</p>
         <h1><small>Hello, I&apos;m</small>{profile.displayName}<i>.</i></h1>
         <p className="hero-cn">{profile.chineseName} · 翻译 · 跨文化沟通 · 国际交流</p>
-        <h2>我在语言、文化与真实生活之间寻找连接。</h2>
-        <p className="hero-description">喜欢把复杂的表达整理得清晰、温柔，也保留一点好奇心和创造力。</p>
+        <h2>{profile.headline || "我在语言、文化与真实生活之间寻找连接。"}</h2>
+        <p className="hero-description">{profile.intro || "喜欢把复杂的表达整理得清晰、温柔，也保留一点好奇心和创造力。"}</p>
         <div className="hero-actions">
           <Link className="pill dark" href="#experience">查看我的经历 →</Link>
           <Link className="text-link" href="#contact">联系我 →</Link>

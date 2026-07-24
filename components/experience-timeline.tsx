@@ -94,7 +94,7 @@ export function ExperienceTimeline({ items = fallbackExperiences }: { items?: Ex
                     transition={{ duration: .3 }}
                   >
                     <div className={`fan-photo crop-${(index % 5) + 1}`}>
-                      <Image src="/images/maggy-portrait.jpg" alt="临时经历图片，后续可在后台替换" fill sizes="(max-width: 700px) 70vw, 320px" />
+                      <Image src={item.coverUrl || "/images/maggy-portrait.jpg"} alt={item.coverAlt || `${item.title}经历图片`} fill sizes="(max-width: 700px) 70vw, 320px" unoptimized={Boolean(item.coverUrl)} />
                       <span>{item.year} · {String(index + 1).padStart(2, "0")}</span>
                       <small>WHERE I GREW</small>
                     </div>
